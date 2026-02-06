@@ -1,74 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Table</title>
-    <style>
-        body {
-            font-family: "Times New Roman", serif;
-        }
-        table {
-            border-collapse: collapse;
-            width: 60%;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px 12px;
-            text-align: center;
-        }
-        th {
-            background-color: lightblue;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Visitors Information</title>
 </head>
 <body>
-    <h1 style="text-align:center; color:darkblue;">Numbers in Different Languages</h1>
-    <table>
+  <h1>Visitors Information</h1>
+  <hr>
+  <form method="post">
+    <div>
+      <table border="1" cellpadding="10">
+        <!-- Email Address -->
         <tr>
-            <th>Decimal</th>
-            <th>English</th>
-            <th>Spanish</th>
-            <th>Korean</th>
-            <th>Binary</th>
+          <td><label for="email">Email Address:</label></td>
+          <td><input type="email" id="email" name="email" required></td>
         </tr>
+        <!-- User's Interest -->
         <tr>
-            <td>1</td>
-            <td>one</td>
-            <td>uno</td>
-            <td>hanna</td>
-            <td>0001</td>
+          <td>User’s interest (web for):</td>
+          <td>
+            <input type="checkbox" id="research" name="interest" value="research">
+            <label for="research">Research</label><br>
+            <input type="checkbox" id="purchase" name="interest" value="purchase">
+            <label for="purchase">Purchase</label>
+          </td>
         </tr>
+        <!-- Occupation Dropdown -->
         <tr>
-            <td>2</td>
-            <td>two</td>
-            <td>dos</td>
-            <td>dool</td>
-            <td>0010</td>
+          <td><label for="occupation">Occupation:</label></td>
+          <td>
+            <select id="occupation" name="occupation" required>
+              <option value="" selected disabled>(select one)</option>
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+              <option value="developer">Developer</option>
+              <option value="other">Other</option>
+            </select>
+          </td>
         </tr>
+        <!-- Junk Emails Radio Buttons -->
         <tr>
-            <td>3</td>
-            <td>three</td>
-            <td>tres</td>
-            <td>set</td>
-            <td>0011</td>
+          <td>Want us to send you junk emails?</td>
+          <td>
+            <input type="radio" id="absolutely" name="junk_email" value="absolutely" required>
+            <label for="absolutely">Absolutely</label><br>
+            <input type="radio" id="noway" name="junk_email" value="no_way_man">
+            <label for="noway">No way man</label>
+          </td>
         </tr>
+        <!-- Submit and Reset Buttons -->
         <tr>
-            <td>4</td>
-            <td>four</td>
-            <td>quarto</td>
-            <td>net</td>
-            <td>0100</td>
+          <td colspan="2" align="center">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+          </td>
         </tr>
-        <tr>
-            <td>5</td>
-            <td>five</td>
-            <td>cinco</td>
-            <td>daset</td>
-            <td>0101</td>
-        </tr>
-    </table>
+      </table>
+    </div>
+  </form>
 </body>
 </html>
