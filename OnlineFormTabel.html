@@ -1,49 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Registration Form</title>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    input[type="submit"], input[type="reset"] {
+      width: 48%;
+      cursor: pointer;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      transition: background 0.3s;
+    }
+    input[type="reset"] {
+      background: #6c757d;
+    }
+    input[type="submit"]:hover {
+      background: #0056b3;
+    }
+    input[type="reset"]:hover {
+      background: #5a6268;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <center>
-        <form method="post" style="max-width: 400px;">
-            <table border="0" cellpadding="8" cellspacing="0">
-                <tr>
-                    <td><label for="Username">Username:</label></td>
-                    <td><input type="text" id="Username" name="Username" required></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" name="Password" required></td>
-                </tr>
-                <tr>
-                    <td><label for="Confirm_Password">Confirm Password:</label></td>
-                    <td><input type="password" id="Confirm_Password" name="Confirm_Password" required></td>
-                </tr>
-                <tr>
-                    <td><label for="address">Address:</label></td>
-                    <td><textarea id="address" name="address" rows="4" cols="40" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="Profession">Profession:</label></td>
-                    <td>
-                        <select id="Profession" name="Profession">
-                            <option value="">(Select One)</option>
-                            <option value="Student">Student</option>
-                            <option value="Engineer">Engineer</option>
-                            <option value="Teacher">Teacher</option>
-                            <option value="Designer">Designer</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" value="Register">
-                        <input type="reset" value="Reset">
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </center>
+  <form id="registrationForm" method="post">
+    <h2>Registration Form</h2>
+    
+    <label for="Username">Username:</label>
+    <input type="text" id="Username" name="Username" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="Password" required>
+    
+    <label for="Confirm_Password">Confirm Password:</label>
+    <input type="password" id="Confirm_Password" name="Confirm_Password" required>
+    <div id="passwordError" class="error"></div>
+    
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
+    
+    <label for="Profession">Profession:</label>
+    <select id="Profession" name="Profession" required>
+      <option value="">(Select One)</option>
+      <option value="Student">Student</option>
+      <option value="Engineer">Engineer</option>
+      <option value="Teacher">Teacher</option>
+      <option value="Designer">Designer</option>
+      <option value="Other">Other</option>
+    </select>
+    
+    <div class="btn-group">
+      <input type="submit" value="Register">
+      <input type="reset" value="Reset">
+    </div>
+  </form>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('Confirm_Password');
+    const errorDiv = document.getElementById('passwordError');
+
+    form.addEventListener('submit', function(event) {
+      if (password.value !== confirmPassword.value) {
+        event.preventDefault();
+        errorDiv.textContent = "Passwords do not match!";
+      } else {
+        errorDiv.textContent = "";
+        alert("Form submitted successfully!");
+      }
+    });
+  </script>
 </body>
 </html>
