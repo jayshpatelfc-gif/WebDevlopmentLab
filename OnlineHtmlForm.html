@@ -1,39 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitors Information</title>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    input[type="submit"], input[type="reset"] {
+      width: 48%;
+      cursor: pointer;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      transition: background 0.3s;
+    }
+    input[type="reset"] {
+      background: #6c757d;
+    }
+    input[type="submit"]:hover {
+      background: #0056b3;
+    }
+    input[type="reset"]:hover {
+      background: #5a6268;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
 </head>
-<body style="font-family: monospace;">
-    <center>
-    <h1 style="color: aqua;">Visitors Information</h1>
+<body>
+  <form method="post">
+    <h2>Registration Form</h2>
     
-    <form method="post">
-        <table border="2"cellpadding="10">
-            <th><label for="Email">Email :</label></th>
-            <th><input type="email" id="email"name="email"required></th><br><br>
-            <tr>
-                <td>User's Interface :</td>
-                <td><input type="checkbox"id="research"name="intrest">Research</td>
-                <td><input type="checkbox"id="Purchase"name="intrest">Purchase</td>
-            </tr><br><br>
-            <tr>
-                <td>Occupation</td>
-                <td><select id="Occupation" name="Occupation">
-                            <option value=""></option>
-                            <option value="Student">Student</option>
-                            <option value="Engineer">Engineer</option>
-                            <option value="Teacher">Teacher</option>
-                            <option value="Designer">Designer</option>
-                            <option value="Other">Other</option>
-                        </select>
-                </td>
-            </tr>
-
-        </table>
-    </form>
-        
-    </center>
+    <label for="Username">Username:</label>
+    <input type="text" id="Username" name="Username" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="Password" required>
+    
+    <label for="Confirm_Password">Confirm Password:</label>
+    <input type="password" id="Confirm_Password" name="Confirm_Password" required>
+    
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
+    
+    <label for="Profession">Profession:</label>
+    <select id="Profession" name="Profession" required>
+      <option value="">(Select One)</option>
+      <option value="Student">Student</option>
+      <option value="Engineer">Engineer</option>
+      <option value="Teacher">Teacher</option>
+      <option value="Designer">Designer</option>
+      <option value="Other">Other</option>
+    </select>
+    
+    <div class="btn-group">
+      <input type="submit" value="Register">
+      <input type="reset" value="Reset">
+    </div>
+  </form>
 </body>
 </html>
+
