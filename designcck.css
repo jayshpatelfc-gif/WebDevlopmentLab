@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+h1 {
+  color: #e74c3c;
+
+}
+h2 {
+  color: #2980b9;
+}
+p {
+  color: #27ae60;
+}
+span {
+  color: #f39c12;
+}
+footer {
+  color: #8e44ad;
+}
