@@ -1,0 +1,9 @@
+
+.styled-text {
+    border-width: 20px;
+    border-style: solid;
+    border-image-repeat: stretch;
+    border-image-source: url(--URL--);
+    padding: 20px;
+}
+
