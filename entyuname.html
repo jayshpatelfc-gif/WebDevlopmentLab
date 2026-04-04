@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+</head>
+<body>
+    <h2>Enter Your Name:</h2>
+    <input name="nm" id="nms" placeholder="Enter Your Name here..">
+    <button onclick="Namecoll()">Submit Here</button>
+    <script>
+        function Namecoll() {
+            let name = document.getElementById("nms").value;
+            alert("Hello " + name);
+        }
+    </script>
+</body>
+</html>

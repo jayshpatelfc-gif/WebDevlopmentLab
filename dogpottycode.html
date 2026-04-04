@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phone Number Validation Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    .success {
+      color: green;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form with Phone Number Validation</h2>
+  <form id="myForm" onsubmit="onSubmit(event)">
+    <label for="phone">Phone Number:</label><br>
+    <input type="text" id="phone" name="phone" placeholder="XXX-XXX-XXXX or XXX.XXX.XXXX" />
+    <div id="phoneError" class="error"></div>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="result"></div>
+  <script>
+    function validatePhoneNumber(phone) {
+      if (!phone) {
+        return "Phone number is required.";
+      }
+      const regex = /^\d{3}[-.]\d{3}[-.]\d{4}$/;
+
+      if (!regex.test(phone)) {
+        return "Phone number must be in format XXX-XXX-XXXX or XXX.XXX.XXXX.";
+      }
+
+      return null; 
+    }
+    function onSubmit(event) {
+      event.preventDefault(); 
+      const phoneInput = document.getElementById("phone").value.trim();
+      const phoneErrorDiv = document.getElementById("phoneError");
+      const resultDiv = document.getElementById("result");
+      phoneErrorDiv.textContent = "";
+      resultDiv.textContent = "";
+      const phoneError = validatePhoneNumber(phoneInput);
+      if (phoneError) {
+        phoneErrorDiv.textContent = phoneError;
+        return; 
+      }
+      resultDiv.textContent = "Form submitted successfully!";
+      resultDiv.className = "success";
+    }
+  </script>
+</body>
+</html>

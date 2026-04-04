@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OddEvan</title>
+</head>
+<body>
+    <h2>Odd Even Checker Tool</h2>
+    <p>Enter The Number:</p>
+    <input name="mse" id="nmw" placeholder="Enter The Number...">
+    <button onclick="checkOddEven()">Submit Here</button>
+    
+    <script>
+        function checkOddEven() {
+            let chu = document.getElementById("nmw");
+            let num = parseInt(chu.value);
+            if (num % 2 === 0) {
+                alert("It is EVEN Number");
+            } else {
+                alert("It is ODD Number");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function showTime() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();   // gives HH:MM:SS
+    document.getElementById("timeBox").value = t;
+    setTimeout(showTime, 1000);       // call again after 1 second
+}
+</script>
+</head>
+<body onload="showTime()">
+    <input type="text" id="timeBox" readonly>
+</body>
+</html>
